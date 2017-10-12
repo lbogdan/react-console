@@ -1,3 +1,3 @@
-import Container from './Container'
+import Console from './Console'
 
-export default Container
+export default Console

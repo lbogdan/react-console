@@ -1,6 +1,7 @@
-import React, { Component, PropTypes } from 'react'
-import ObjectInspector from 'react-object-inspector'
+import React, { Component } from 'react'
+import ObjectInspector from '@tilastokeskus/react-object-inspector'
 import Highlight from 'react-highlight'
+import PropTypes from 'prop-types'
 
 import Icon from './Icon'
 

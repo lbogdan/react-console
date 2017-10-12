@@ -1,11 +1,27 @@
-import React from 'react'
-import { storiesOf, action } from '@kadira/storybook'
+import React, { Component } from 'react'
+import { storiesOf } from '@storybook/react'
 
 import Console from '../index'
 
+class DefaultView extends React.Component {
+  componentDidMount() {
+    this.oldInfo = console.info;
+    console.info = (...args) => {
+      this.console.addMessage('info', args);
+      this.oldInfo.apply(console, args);
+    }
+  }
+
+  render() {
+    return (
+      <Console ref={(c) => this.console = c} />
+    )
+  }
+}
+
 storiesOf('React Console', module)
   .add('default view', () => (
-    <Console/>
+    <DefaultView/>
   ))
   .add('not load fontawesome', () => (
     <Console noFontawesome={true} />

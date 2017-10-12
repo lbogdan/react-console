@@ -1,5 +1,5 @@
 {
-  "name": "@zillding/react-console",
+  "name": "react-console",
   "version": "0.0.5",
   "description": "A developer console like react component.",
   "keywords": [
@@ -10,7 +10,6 @@
   "main": "dist/index.js",
   "license": "MIT",
   "scripts": {
-    "prepublish": ". ./.scripts/prepublish.sh",
     "start": "start-storybook -p 9010",
     "publish-storybook": "bash .scripts/publish_storybook.sh"
   },
@@ -23,27 +22,30 @@
   },
   "author": "Zill Ding",
   "devDependencies": {
+    "@storybook/react": "^3.2.12",
+    "@tilastokeskus/react-object-inspector": "^0.2.3",
+    "babel-cli": "^6.5.0",
     "babel-core": "^6.5.0",
     "babel-loader": "^6.2.4",
+    "babel-plugin-transform-runtime": "^6.5.0",
     "babel-polyfill": "^6.5.0",
     "babel-preset-es2015": "^6.5.0",
     "babel-preset-react": "^6.5.0",
     "babel-preset-stage-2": "^6.5.0",
-    "babel-plugin-transform-runtime": "^6.5.0",
-    "babel-cli": "^6.5.0",
-    "@kadira/storybook": "^1.19.0",
-    "style-loader": "^0.13.1",
+    "git-url-parse": "^6.0.1",
+    "prop-types": "^15.6.0",
     "raw-loader": "^0.5.1",
-    "git-url-parse": "^6.0.1"
+    "react-highlight": "^0.10.0",
+    "style-loader": "^0.13.1"
   },
   "dependencies": {
     "debounce": "^1.0.0",
-    "react": "^0.14.7",
-    "react-dom": "^0.14.7",
     "react-fontawesome": "^1.1.0",
-    "react-helmet": "^3.1.0",
-    "react-highlight": "^0.8.0",
-    "react-object-inspector": "^0.2.1"
+    "react-helmet": "^5.2.0"
+  },
+  "peerDependencies": {
+    "react": "^16.0.0",
+    "react-dom": "^16.0.0"
   },
   "engines": {
     "npm": "^3.0.0"
