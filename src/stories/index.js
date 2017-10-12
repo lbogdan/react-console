@@ -3,28 +3,37 @@ import { storiesOf } from '@storybook/react'
 
 import Console from '../index'
 
-class DefaultView extends React.Component {
+class AutoConsole extends React.Component {
   componentDidMount() {
-    this.oldInfo = console.info;
-    console.info = (...args) => {
-      this.console.addMessage('info', args);
-      this.oldInfo.apply(console, args);
-    }
+    this.orig = {};
+    ['log', 'info', 'warn', 'error', 'debug'].forEach((method) => {
+      this.orig[method] = console[method];
+      console[method] = (...args) => {
+        this.console.addMessage(method, args);
+        this.orig[method].apply(console, args);
+      }
+    });
+  }
+
+  componentWillUnmount() {
+    Object.keys(this.orig).forEach((method) => {
+      console[method] = this.orig[method];
+    })
   }
 
   render() {
     return (
-      <Console ref={(c) => this.console = c} />
+      <Console ref={(c) => this.console = c} {...this.props}/>
     )
   }
 }
 
 storiesOf('React Console', module)
   .add('default view', () => (
-    <DefaultView/>
+    <AutoConsole/>
   ))
   .add('not load fontawesome', () => (
-    <Console noFontawesome={true} />
+    <AutoConsole noFontawesome={true} />
   ))
   .add('custom styles', () => {
     const style = {
@@ -33,6 +42,6 @@ storiesOf('React Console', module)
       height: 300,
     }
     return (
-      <Console style={style} />
+      <AutoConsole style={style} />
     )
   })
