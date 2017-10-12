@@ -23,7 +23,6 @@
   "author": "Zill Ding",
   "devDependencies": {
     "@storybook/react": "^3.2.12",
-    "@tilastokeskus/react-object-inspector": "^0.2.3",
     "babel-cli": "^6.5.0",
     "babel-core": "^6.5.0",
     "babel-loader": "^6.2.4",
@@ -35,13 +34,14 @@
     "git-url-parse": "^6.0.1",
     "prop-types": "^15.6.0",
     "raw-loader": "^0.5.1",
-    "react-highlight": "^0.10.0",
     "style-loader": "^0.13.1"
   },
   "dependencies": {
+    "@tilastokeskus/react-object-inspector": "^0.2.3",
     "debounce": "^1.0.0",
     "react-fontawesome": "^1.1.0",
-    "react-helmet": "^5.2.0"
+    "react-helmet": "^5.2.0",
+    "react-highlight": "^0.10.0"
   },
   "peerDependencies": {
     "react": "^16.0.0",
