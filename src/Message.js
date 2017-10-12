@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import ObjectInspector from '@tilastokeskus/react-object-inspector'
+import ObjectInspector from 'react-object-inspector'
 import Highlight from 'react-highlight'
 import PropTypes from 'prop-types'
 

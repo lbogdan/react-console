@@ -10,7 +10,7 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reactObjectInspector = require('@tilastokeskus/react-object-inspector');
+var _reactObjectInspector = require('react-object-inspector');
 
 var _reactObjectInspector2 = _interopRequireDefault(_reactObjectInspector);
 
